@@ -4,7 +4,7 @@ class DTOclientes {
     private $id;
     private $nombre;
 
-    public function __construct($id, $nombre, $imagen) {
+    public function __construct($id, $nombre) {
         $this->id = $id;
         $this->nombre = $nombre;
     }
