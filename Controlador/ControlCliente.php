@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../Modelo/clientesDAO';
+require_once '../Modelo/clientesDAO.php';
 
 class LoginController {
     public function login($usuario, $contraseña) {
