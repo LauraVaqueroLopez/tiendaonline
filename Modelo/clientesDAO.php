@@ -8,29 +8,30 @@ class EmpleadoDAO {
         $this->conn = DB::getConnection();
     }
     
-    public function getEmpleadoById($id) {
-        $stmt = $this->conn->prepare("SELECT * FROM empleados WHERE id = :id");
+    public function getClienteById($id) {
+        $stmt = $this->conn->prepare("SELECT * FROM Cliente WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
         $fila = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($fila) {
-            return new DTOEmpleado($fila['id'], $fila['nombre'], $fila['edad'], $fila['dpto_id'], $fila['imagen']);
+            return new DTOCliente($fila['id'], $fila['nombre']);
         } else {
             return null; // Si no se encuentra, devolvemos null
         }
     }
 
-    public function addEmpleado($empleado) {
+    public function addCliente($cliente) {
         $stmt = $this->conn->prepare("INSERT INTO Cliente (nombre) VALUES (:nombre)");
-        $stmt->bindParam(':nombre', $empleado->getNombre());
+        $stmt->bindParam(':nombre', $cliente->getNombre());
         return $stmt->execute();
     }
 
-    public function deleteEmpleado($id) {
+    public function deleteCliente($id) {
         $stmt = $this->conn->prepare("DELETE FROM Cliente WHERE id = :id");
         $stmt->bindParam(':id', $id);
         return $stmt->execute();
     }
 }
+?>
 ?>
