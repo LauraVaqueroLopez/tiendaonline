@@ -2,7 +2,7 @@
 require_once 'db.php';
 require_once 'DTOclientes.php';
 
-class EmpleadoDAO {
+class ClientesDAO {
     private $conn;
     public function __construct() {
         $this->conn = DB::getConnection();
