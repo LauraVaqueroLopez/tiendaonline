@@ -15,7 +15,7 @@ class EmpleadoDAO {
     }
 
     public function deleteEmpleado($id) {
-        $stmt = $this->conn->prepare("DELETE FROM empleados WHERE id = :id");
+        $stmt = $this->conn->prepare("DELETE FROM Cliente WHERE id = :id");
         $stmt->bindParam(':id', $id);
         return $stmt->execute();
     }
