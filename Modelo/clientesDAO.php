@@ -1,19 +1,18 @@
 <?php
-require_once 'DB.php';
+require_once 'db.php';
+require_once 'DTOclientes.php';
 
-class clientesDAO {
+class EmpleadoDAO {
     private $conn;
-
     public function __construct() {
         $this->conn = DB::getConnection();
     }
 
-    // Método para obtener un usuario por nombre
-    public function getClienteByNombre($nombre) {
-        $stmt = $this->conn->prepare("SELECT * FROM usuarios WHERE nombre = :nombre");
-        $stmt->bindParam(':nombre', $nombre);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+    public function addEmpleado($empleado) {
+        $stmt = $this->conn->prepare("INSERT INTO Cliente (nombre) VALUES (:nombre)");
+        $stmt->bindParam(':nombre', $empleado->getNombre());
+        return $stmt->execute();
     }
+    
 }
 ?>
