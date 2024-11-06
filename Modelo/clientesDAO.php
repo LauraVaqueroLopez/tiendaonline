@@ -8,9 +8,9 @@ class EmpleadoDAO {
         $this->conn = DB::getConnection();
     }
 
-    public function addEmpleado($empleado) {
+    public function addEmpleado($cliente) {
         $stmt = $this->conn->prepare("INSERT INTO Cliente (nombre) VALUES (:nombre)");
-        $stmt->bindParam(':nombre', $empleado->getNombre());
+        $stmt->bindParam(':nombre', $cliente->getNombre());
         return $stmt->execute();
     }
     
