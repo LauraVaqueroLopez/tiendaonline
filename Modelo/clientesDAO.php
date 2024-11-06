@@ -7,6 +7,19 @@ class EmpleadoDAO {
     public function __construct() {
         $this->conn = DB::getConnection();
     }
+    
+    public function getEmpleadoById($id) {
+        $stmt = $this->conn->prepare("SELECT * FROM empleados WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $fila = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($fila) {
+            return new DTOEmpleado($fila['id'], $fila['nombre'], $fila['edad'], $fila['dpto_id'], $fila['imagen']);
+        } else {
+            return null; // Si no se encuentra, devolvemos null
+        }
+    }
 
     public function addEmpleado($empleado) {
         $stmt = $this->conn->prepare("INSERT INTO Cliente (nombre) VALUES (:nombre)");
