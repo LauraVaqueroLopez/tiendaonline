@@ -1,0 +1,175 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 1em 0;
+}
+
+nav {
+  background-color: #b2dec4;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.5em 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  position: relative;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: #0e0d0d;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #e9ecef;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content li {
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content li a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content li a:hover {
+  background-color: #b2dec4;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+main {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+  color: #fff;
+  flex: 1;
+}
+
+main section {
+  flex: 2;
+  
+  margin-left: 50px
+}
+
+aside {
+  flex: 2;
+  padding: 10px;
+}
+
+footer {
+  background-color: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 1em 0;
+  width: 100%;
+}
+
+#site-map{
+  flex:0.5;
+  background-color: #b2dec4;
+  color: #000000;
+  padding-right: 180px;
+}
+
+.site-map {
+  margin-top: 10px;
+}
+
+@keyframes slidy {
+  0% { left: 0%; }
+  16.66% { left: 0%; }
+  20% { left: -100%; }
+  36.66% { left: -100%; }
+  40% { left: -200%; }
+  56.66% { left: -200%; }
+  60% { left: -300%; }
+  76.66% { left: -300%; }
+  80% { left: -400%; }
+  96.66% { left: -400%; }
+  100% { left: -500%; }
+}
+
+figure.slider { 
+  position: relative; 
+  width: 600%;
+  font-size: 0; 
+  animation: 30s slidy infinite; 
+  overflow: hidden;
+}
+
+figure.slider figure { 
+  width: 16.66%;
+  height: auto;
+  display: inline-block;  
+  position: inherit; 
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body, figure { 
+  margin: 0; 
+  background: #101010;
+  font-family: Istok Web, sans-serif;
+  font-weight: 100;
+}
+
+div#captioned-gallery { 
+  width: 70%;
+  max-width: 600px;
+  overflow: hidden; 
+  margin: 0 auto;
+  border: 2px solid #333;
+  border-radius: 8px;
+}
+
+
+figure.slider img { 
+  width: 100%; 
+  height: auto; 
+}
+
+figure.slider figure figcaption { 
+  position: absolute; 
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff; 
+  width: 100%;
+  font-size: 1.5rem;
+  padding: .5rem; 
+}
