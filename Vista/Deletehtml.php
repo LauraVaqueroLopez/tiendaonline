@@ -13,12 +13,13 @@
   </header>
 
   <nav>
-    <ul>
-      <li><a href="menuhtml.php">Inicio</a></li>
-      <li><a href="quienesomos.html">Quiénes Somos</a></li>
-      <li><a href="Servicios.html">Servicios</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+      <ul>
+          <li><a href="menuhtml.php">Inicio</a></li>
+          <li><a href="Mostrarhtml.php">Mostrar productos con id</a></li>
+          <li><a href="Inserthtml.php">Inserta productos</a></li>
+          <li><a href="Deletehtml.php">Elimina productos</a></li>
+          <li><a href="Uploadhtml.php">Actualiza productos</a></li>
+      </ul>
   </nav>
 
   <main>
@@ -26,10 +27,11 @@
     <aside id="site-map">
       <h3>Mapa del Sitio</h3>
       <ul>
-        <li><a href="menuhtml.php">Inicio</a></li>
-        <li><a href="quienesomos.html">Quiénes Somos</a></li>
-        <li><a href="Servicios.html">Servicios</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="menuhtml.php">Inicio</a></li>
+          <li><a href="Mostrarhtml.php">Mostrar productos con id</a></li>
+          <li><a href="Inserthtml.php">Inserta productos</a></li>
+          <li><a href="Deletehtml.php">Elimina productos</a></li>
+          <li><a href="Uploadhtml.php">Actualiza productos</a></li>
       </ul>
     </aside>
 
@@ -47,12 +49,13 @@
   </main>
 
   <footer>
-    <p>&copy; 2024 Laura's Photography Studio. Todos los derechos reservados.</p>
+    <p>Todos los derechos reservados.</p>
     <nav class="site-map">
         <a href="menuhtml.php">Inicio</a>
-        <a href="quienesomos.html">Quiénes Somos</a>
-        <a href="Servicios.html">Servicios</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="Mostrarhtml.php">Mostrar productos</a>
+        <a href="Inserthtml.php">Inserta productos</a>
+        <a href="Deletehtml.php">Elimina productos</a>
+        <a href="Uploadhtml.php">Actualiza productos</a>
     </nav>
   </footer>
 

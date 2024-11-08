@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laura's Photography Studio</title>
+    <title>Servicios - Laura's Photography Studio</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
@@ -12,11 +12,10 @@
     <h1>Laura's Photography Studio</h1>
 </header>
 
-
 <nav>
     <ul>
         <li><a href="menuhtml.php">Inicio</a></li>
-        <li><a href="Mostrarhtml.php">Mostrar productos con id</a> </li>
+        <li><a href="Mostrarhtml.php">Mostrar productos con id</a></li>
         <li><a href="Inserthtml.php">Inserta productos</a></li>
         <li><a href="Deletehtml.php">Elimina productos</a></li>
         <li><a href="Uploadhtml.php">Actualiza productos</a></li>
@@ -29,7 +28,7 @@
         <h3>Mapa del Sitio</h3>
         <ul>
             <li><a href="menuhtml.php">Inicio</a></li>
-            <li><a href="Mostrarhtml.php">Mostrar productos con id</a> </li>
+            <li><a href="Mostrarhtml.php">Mostrar productos con id</a></li>
             <li><a href="Inserthtml.php">Inserta productos</a></li>
             <li><a href="Deletehtml.php">Elimina productos</a></li>
             <li><a href="Uploadhtml.php">Actualiza productos</a></li>
@@ -37,18 +36,16 @@
     </aside>
 
     <section>
-        <h2>Bienvenidos a Nuestra Empresa</h2>
-        <p>Ofrecemos una amplia gama de servicios para impulsar tu negocio. <br>
-            Explora nuestras soluciones y descubre cómo podemos ayudarte a alcanzar tus metas. En nuestra empresa,
-            puedes contratar diferentes servicios que te facilitarán la organización de <br>
-            aquellos planes que tengas que llevar a cabo. <br>
-            <br>
-            Podemos asistir tanto a tu boda como a comuniones, bautizos y cumpleaños.<br>
-            también hacemos sesiones personalizadas en nuestro estudio fotográfico en Getafe, Madrid y <br>
-            diferentes ofertas por si necesitas fotografías artísticas, tanto de retratos como de paisajes.
-        </p>
-    </section>
+        <h2>Escribe el id del producto</h2>
+        <p>Ofrecemos los siguientes servicios para tu negocio:</p>
+        <ul>
+            <li><a href="https://www.google.com/?hl=es">Bodas y Eventos</a></li>
+            <li><a href="https://www.google.com/?hl=es">Sesión Personalizada</a></li>
+            <li><a href="https://www.google.com/?hl=es">Sesiones artísticas</a></li>
+        </ul>
 
+
+    </section>
 </main>
 
 <footer>

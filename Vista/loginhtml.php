@@ -15,7 +15,7 @@
     <p><label>Usuario: <input type="text" name="usuario" required></label></p>
     <p><label>Contraseña: <input type="password" name="contraseña" required></label></p>
     <p><input type="submit" value="Ingresar"></p>
-    <button type="button" onclick="window.location.href='registro.php'">Registrarse</button>
+    <button type="button" onclick="window.location.href='Registro.php'">Registrarse</button>
 
     <?php
     session_start();
