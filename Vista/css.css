@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   color: #333;
-  background-color: #f4f4f9;
+  background: #101010;
   margin: 0;
   padding: 0;
   display: flex;
@@ -51,7 +51,7 @@ main {
 
 main section {
   flex: 2;
-  
+
   margin-left: 50px
 }
 
@@ -78,3 +78,4 @@ footer {
 .site-map {
   margin-top: 10px;
 }
+
