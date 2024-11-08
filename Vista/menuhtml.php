@@ -9,29 +9,15 @@
 <body>
 
 <header>
-    <section>
-        <h1>Laura's Photography Studio</h1>
-        <p>Tu socio de confianza en soluciones empresariales en Getafe</p>
-        <p>Tu socio de confianza en soluciones empresariales en Getafe</p>
-        <p>Tu socio de confianza en soluciones empresariales en Getafe</p>
-    </section>
+    <h1>Laura's Photography Studio</h1>
 </header>
-
 
 
 <nav>
     <ul>
         <li><a href="menuhtml.php">Inicio</a></li>
         <li><a href="quienesomos.html">Quiénes Somos</a></li>
-        <li class="dropdown">
-            <a href="">Servicios</a>
-            <ul class="dropdown-content">
-                <li><a href="Servicios.html"><strong>Todos</strong></a></li>
-                <li><a href="https://www.google.com/?hl=es">Bodas y Eventos</a></li>
-                <li><a href="https://www.google.com/?hl=es">Sesión Personalizada</a></li>
-                <li><a href="https://www.google.com/?hl=es">Sesiones artísticas</a></li>
-            </ul>
-        </li>
+        <li><a href="Servicios.html">Servicios</a></li>
         <li><a href="contacto.html">Contacto</a></li>
     </ul>
 </nav>
@@ -43,13 +29,7 @@
         <ul>
             <li><a href="menuhtml.php">Inicio</a></li>
             <li><a href="quienesomos.html">Quiénes Somos</a></li>
-            <li><a href="Servicios.html">Servicios</a>
-                <ul>
-                    <li><a href="https://www.google.com/?hl=es">Bodas y Eventos</a></li>
-                    <li><a href="https://www.google.com/?hl=es">Sesión Personalizada</a></li>
-                    <li><a href="https://www.google.com/?hl=es">Sesiones artísticas</a></li>
-                </ul>
-            </li>
+            <li><a href="Servicios.html">Servicios</a></li>
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </aside>
