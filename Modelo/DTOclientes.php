@@ -8,7 +8,7 @@ class DTOclientes {
     public function __construct($id, $nombre, $password) {
         $this->id = $id;
         $this->nombre = $nombre;
-        $this->password = $password; // Contraseña hash en este caso
+        $this->password = $password;
     }
 
     public function getNombre() {

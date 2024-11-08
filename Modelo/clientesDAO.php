@@ -11,11 +11,10 @@ class ClientesDAO {
 
     // Método para registrar un cliente
     public function addCliente($nombre, $contraseña) {
-        $stmt = $this->conn->prepare("INSERT INTO Cliente (nombre, password) VALUES (:nombre, :contraseña)");
+        $stmt = $this->conn->prepare("INSERT INTO Cliente (nickname, password) VALUES (:nombre, :password)");
         $stmt->bindParam(':nombre', $nombre);
-        $stmt->bindParam(':contraseña', $contraseña);
+        $stmt->bindParam(':password', $contraseña);
         return $stmt->execute();
-
     }
 
     // Método para verificar si un cliente ya está registrado

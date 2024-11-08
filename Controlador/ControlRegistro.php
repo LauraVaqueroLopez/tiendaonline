@@ -18,7 +18,7 @@ class ControlRegistro {
         // Registrar el nuevo cliente con la contraseña tal cual se ingresó
         if ($clienteDAO->addCliente($nombre, $contraseña)) {
             $_SESSION['aviso'] = 'Cliente registrado exitosamente.';
-            header('Location: ../Vista/loginhtml.php');
+            header('Location: ../Vista/Registro.php');
             exit();
         } else {
             $_SESSION['aviso'] = 'Hubo un error al registrar el cliente.';
