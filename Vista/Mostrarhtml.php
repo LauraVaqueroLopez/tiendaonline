@@ -28,10 +28,13 @@
         <h3>Mapa del Sitio</h3>
         <ul>
             <li><a href="menuhtml.php">Inicio</a></li>
+            <ul>
+
             <li><a href="Mostrarhtml.php">Mostrar productos con id</a></li>
             <li><a href="Inserthtml.php">Inserta productos</a></li>
             <li><a href="Deletehtml.php">Elimina productos</a></li>
             <li><a href="Uploadhtml.php">Actualiza productos</a></li>
+            </ul>
         </ul>
     </aside>
 
