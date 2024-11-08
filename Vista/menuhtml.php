@@ -11,7 +11,9 @@
 <header>
     <section>
         <h1>Laura's Photography Studio</h1>
-        <p>Tu socio de confianza en soluciones empresariales</p>
+        <p>Tu socio de confianza en soluciones empresariales en Getafe</p>
+        <p>Tu socio de confianza en soluciones empresariales en Getafe</p>
+        <p>Tu socio de confianza en soluciones empresariales en Getafe</p>
     </section>
 </header>
 
