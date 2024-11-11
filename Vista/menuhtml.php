@@ -52,6 +52,7 @@ $productos = $controlProducto->listarProductos();
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
+                <th>Descripción</th>
                 <th>Precio</th>
             </tr>
             </thead>
@@ -60,6 +61,7 @@ $productos = $controlProducto->listarProductos();
                 <tr>
                     <td><?php echo $producto->getId(); ?></td>
                     <td><?php echo $producto->getNombre(); ?></td>
+                    <td><?php echo $producto->getDescripcion(); ?></td>
                     <td><?php echo $producto->getPrecio(); ?></td>
                 </tr>
             <?php endforeach; ?>

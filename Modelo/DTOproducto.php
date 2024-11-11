@@ -4,12 +4,14 @@ class DTOProducto
 {
     private $id;
     private $nombre;
+    private $descripcion;
     private $precio;
 
-    public function __construct($id, $nombre, $precio)
+    public function __construct($id, $nombre, $descripcion, $precio)
     {
         $this->id = $id;
         $this->nombre = $nombre;
+        $this->descripcion = $descripcion;
         $this->precio = $precio;
     }
 
@@ -36,10 +38,24 @@ class DTOProducto
         $this->nombre = $nombre;
     }
 
+
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+
+    public function setDescripcion($descripcion): void
+    {
+        $this->descripcion = $descripcion;
+    }
+
+
     public function getPrecio()
     {
         return $this->precio;
     }
+
 
     public function setPrecio($precio): void
     {

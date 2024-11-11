@@ -9,6 +9,19 @@ class ProductoDao
         $this->conn= DB::getConnection();
     }
 
+    public function getAllProductos() {
+        $stmt = $this->conn->prepare("SELECT * FROM Producto");
+        $stmt->execute();
+        $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $productos = [];
+        foreach ($resultados as $fila) {
+            $producto = new DTOProducto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio']);
+            $productos[] = $producto;
+        }
+        return $productos;
+    }
+
     public function getProductosById($id) {
         $stmt = $this->conn->prepare("SELECT * FROM productos WHERE id = :id");
         $stmt->bindParam(':id', $id);
@@ -22,19 +35,6 @@ class ProductoDao
         }
     }
 
-
-    public function getAllProductos() {
-        $stmt = $this->conn->prepare("SELECT * FROM Producto");
-        $stmt->execute();
-        $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $productos = [];
-        foreach ($resultados as $fila) {
-            $producto = new DTOProducto($fila['id'], $fila['nombre'], $fila['precio']);
-            $productos[] = $producto;
-        }
-        return $productos;
-    }
 
     public function addProductos($producto) {
         $stmt = $this->conn->prepare("INSERT INTO producto (id, nombre) VALUES (:id, :nombre)");
