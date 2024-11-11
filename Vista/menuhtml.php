@@ -53,14 +53,14 @@ $productos = $controlProducto->listarProductos();
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
-                <th>Precio</th>
+                <th>&nbsp;&nbsp;&nbsp;Precio</th>
             </tr>
             </thead>
             <tbody>
             <?php foreach ($productos as $producto) : ?>
                 <tr>
                     <td><?php echo $producto->getId(); ?></td>
-                    <td>&nbsp;&nbsp;<?php echo $producto->getNombre(); ?></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $producto->getNombre(); ?></td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $producto->getDescripcion(); ?></td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $producto->getPrecio(); ?></td>
                 </tr>
