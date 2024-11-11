@@ -30,14 +30,14 @@ nav ul {
 }
 
 nav ul li {
-  color: black;
+
   display: inline-block;
   position: relative;
   margin-right: 15px;
   padding: 8px;
 }
 
-nav ul #table{
+nav ul li a{
   color: black;
 }
 
@@ -52,7 +52,7 @@ main {
 
 main section {
   flex: 2;
-  color: black;
+  color: #ffffff;
   margin-left: 50px
 }
 
@@ -78,5 +78,6 @@ footer {
 }
 
 .site-map {
+  color: black;
   margin-top: 10px;
 }

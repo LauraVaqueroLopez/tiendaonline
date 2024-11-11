@@ -3,11 +3,6 @@
 session_start();
 require_once '../controlador/ControlProducto.php';
 
-if (!isset($_SESSION['usuario'])) {
-    header("Location: loginhtml.php");
-    exit();
-}
-
 
 ?>
 
