@@ -60,9 +60,9 @@ $productos = $controlProducto->listarProductos();
             <?php foreach ($productos as $producto) : ?>
                 <tr>
                     <td><?php echo $producto->getId(); ?></td>
-                    <td><?php echo $producto->getNombre(); ?></td>
-                    <td><?php echo $producto->getDescripcion(); ?></td>
-                    <td><?php echo $producto->getPrecio(); ?></td>
+                    <td>&nbsp;&nbsp;<?php echo $producto->getNombre(); ?></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $producto->getDescripcion(); ?></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $producto->getPrecio(); ?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

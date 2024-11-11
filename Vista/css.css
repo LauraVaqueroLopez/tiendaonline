@@ -78,18 +78,3 @@ footer {
 .site-map {
   margin-top: 10px;
 }
-
-.table th, .table td {
-  border: 1px solid #ccc;
-  padding: 15px 20px; /* Ajuste de espacio interno para mayor separación */
-  text-align: left;
-  color: #333;
-}
-
-/* Si deseas añadir un espacio adicional entre las columnas en general */
-.table {
-  width: 100%;
-  border-collapse: separate; /* Asegura que border-spacing funcione */
-  border-spacing: 10px 0; /* Espacio entre columnas (horizontal) y filas (vertical) */
-  background-color: #f0f0f0;
-}
