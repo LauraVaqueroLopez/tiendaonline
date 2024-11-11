@@ -25,11 +25,5 @@ class ClientesDAO {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function getClienteByPassword($contraseña) {
-        $stmt = $this->conn->prepare("SELECT * FROM Cliente WHERE password = :contraseña");
-        $stmt->bindParam(':contraseña', $contraseña);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
 }
 ?>

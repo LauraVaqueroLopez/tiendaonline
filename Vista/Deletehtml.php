@@ -9,7 +9,7 @@
 <body>
 
   <header>
-    <h1>Laura's Photography Studio</h1>
+    <h1>My Techno</h1>
   </header>
 
   <nav>

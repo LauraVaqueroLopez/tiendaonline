@@ -1,3 +1,16 @@
+<?php
+session_start();
+require_once '../controlador/ControlProducto.php';
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: loginhtml.php");
+    exit();
+}
+
+$controlProducto = new ControlProducto();
+$productos = $controlProducto->listarProductos();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,12 +20,9 @@
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
-
 <header>
-    <h1>Laura's Photography Studio</h1>
+    <h1>My Techno</h1>
 </header>
-
-
 <nav>
     <ul>
         <li><a href="menuhtml.php">Inicio</a></li>
@@ -22,38 +32,41 @@
         <li><a href="Uploadhtml.php">Actualiza productos</a></li>
     </ul>
 </nav>
-
 <main>
-
     <aside id="site-map">
         <h3>Mapa del Sitio</h3>
         <ul>
             <li><a href="menuhtml.php">Inicio</a></li>
-            <ul>
-
-                <li><a href="Mostrarhtml.php">Mostrar productos con id</a></li>
-                <li><a href="Inserthtml.php">Inserta productos</a></li>
-                <li><a href="Deletehtml.php">Elimina productos</a></li>
-                <li><a href="Uploadhtml.php">Actualiza productos</a></li>
-            </ul>
+            <li><a href="Mostrarhtml.php">Mostrar productos con id</a></li>
+            <li><a href="Inserthtml.php">Inserta productos</a></li>
+            <li><a href="Deletehtml.php">Elimina productos</a></li>
+            <li><a href="Uploadhtml.php">Actualiza productos</a></li>
         </ul>
     </aside>
-
     <section>
-        <h2>Bienvenidos a Nuestra Empresa</h2>
-        <p>Ofrecemos una amplia gama de servicios para impulsar tu negocio. <br>
-            Explora nuestras soluciones y descubre cómo podemos ayudarte a alcanzar tus metas. En nuestra empresa,
-            puedes contratar diferentes servicios que te facilitarán la organización de <br>
-            aquellos planes que tengas que llevar a cabo. <br>
-            <br>
-            Podemos asistir tanto a tu boda como a comuniones, bautizos y cumpleaños.<br>
-            también hacemos sesiones personalizadas en nuestro estudio fotográfico en Getafe, Madrid y <br>
-            diferentes ofertas por si necesitas fotografías artísticas, tanto de retratos como de paisajes.
-        </p>
+        <h2>Bienvenidos a My Techno</h2>
+        <h3>La tienda donde podrás encontrar todo tipo de material informático de la máxima calidad posible ;).</h3>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($productos as $producto) : ?>
+                <tr>
+                    <td><?php echo $producto->getId(); ?></td>
+                    <td><?php echo $producto->getNombre(); ?></td>
+                    <td><?php echo $producto->getPrecio(); ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
     </section>
-
 </main>
-
 <footer>
     <p>Todos los derechos reservados.</p>
     <nav class="site-map">
@@ -64,6 +77,5 @@
         <a href="Uploadhtml.php">Actualiza productos</a>
     </nav>
 </footer>
-
 </body>
 </html>

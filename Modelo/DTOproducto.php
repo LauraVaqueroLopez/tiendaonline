@@ -4,11 +4,13 @@ class DTOProducto
 {
     private $id;
     private $nombre;
+    private $precio;
 
-    public function __construct($id, $nombre)
+    public function __construct($id, $nombre, $precio)
     {
         $this->id = $id;
         $this->nombre = $nombre;
+        $this->precio = $precio;
     }
 
     public function getId()
@@ -33,6 +35,18 @@ class DTOProducto
     {
         $this->nombre = $nombre;
     }
+
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    public function setPrecio($precio): void
+    {
+        $this->precio = $precio;
+    }
+
+
 
 
 }

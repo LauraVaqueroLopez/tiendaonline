@@ -1,6 +1,6 @@
 <?php
 require_once 'db.php';
-require_once 'DTOProductos.php';
+require_once 'DTOProducto.php';
 class ProductoDao
 {
     private $conn;
@@ -16,7 +16,7 @@ class ProductoDao
         $fila = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($fila) {
-            return new DTOProductos($fila['id'], $fila['nombre']);
+            return new DTOProducto($fila['id'], $fila['nombre']);
         } else {
             return null;
         }
@@ -24,13 +24,13 @@ class ProductoDao
 
 
     public function getAllProductos() {
-        $stmt = $this->conn->prepare("SELECT * FROM productos");
+        $stmt = $this->conn->prepare("SELECT * FROM Producto");
         $stmt->execute();
         $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $productos = [];
         foreach ($resultados as $fila) {
-            $producto = new DTOProductos($fila['id'], $fila['nombre']);
+            $producto = new DTOProducto($fila['id'], $fila['nombre'], $fila['precio']);
             $productos[] = $producto;
         }
         return $productos;
