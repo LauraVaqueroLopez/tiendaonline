@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+require_once '../controlador/ControlProducto.php';
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: loginhtml.php");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,12 +25,19 @@
   </header>
 
   <nav>
-      <ul>
+      <ul class="table">
           <li><a href="menuhtml.php">Inicio</a></li>
           <li><a href="Mostrarhtml.php">Mostrar productos con id</a> </li>
           <li><a href="Inserthtml.php">Inserta productos</a></li>
           <li><a href="Deletehtml.php">Elimina productos</a></li>
           <li><a href="Uploadhtml.php">Actualiza productos</a></li>
+          <li> <a href=""> Usuario: <?php echo $_SESSION["usuario"]?></a></li>
+          <li> <a href="../Controlador/ControlCerrarSesion.php">Cerrar sesión</a></li>
+          <li>
+              <a href="Carritohtml.php">
+                  <img src="https://static.vecteezy.com/system/resources/previews/016/314/413/non_2x/shopping-cart-free-png.png" alt="Carrito" style="width: 30px; height: 30px;">
+              </a>
+          </li>
       </ul>
   </nav>
 

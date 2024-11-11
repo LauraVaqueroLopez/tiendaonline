@@ -18,7 +18,7 @@ header {
 
 nav {
   background-color: #b2dec4;
-  color: #ffffff;
+  color: black;
   text-align: center;
   padding: 0.5em 0;
 }
@@ -30,30 +30,32 @@ nav ul {
 }
 
 nav ul li {
+  color: black;
   display: inline-block;
   position: relative;
   margin-right: 15px;
-}
-
-nav ul li a {
-  color: #0e0d0d;
-  text-decoration: none;
   padding: 8px;
 }
+
+nav ul #table{
+  color: black;
+}
+
 
 main {
   display: flex;
   margin: 20px;
   justify-content: center;
-  color: #fff;
+  color: #ffffff;
   flex: 1;
 }
 
 main section {
   flex: 2;
-
+  color: black;
   margin-left: 50px
 }
+
 
 aside {
   flex: 2;

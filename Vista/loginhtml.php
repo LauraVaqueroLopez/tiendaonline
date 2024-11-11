@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+require_once '../controlador/ControlProducto.php';
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: loginhtml.php");
+    exit();
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,7 +31,6 @@
     <button type="button" onclick="window.location.href='Registro.php'">Registrarse</button>
 
     <?php
-    session_start();
     if (isset($_SESSION['aviso'])) {
         echo '<span class="aviso">' . htmlspecialchars($_SESSION['aviso']) . '</span>';
         unset($_SESSION['aviso']);
