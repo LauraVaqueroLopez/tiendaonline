@@ -10,9 +10,16 @@ if (!isset($_SESSION['usuario'])) {
 $controlProducto = new ControlProducto();
 $productos = $controlProducto->listarProductos();
 
+//crear sesion del carrito
+
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = [];
 }
+
+/*
+ *se trata de un array asociativo en el que la clave id_producto (creado en carritohtml) y el valor es,
+ * mas adelante, cantidad (carritohtml) o el conjunto expresado: $_SESSION['carrito'][$id_producto]
+*/
 function agregarAlCarrito($id_producto) {
     if (isset($_SESSION['carrito'][$id_producto])) {
         $_SESSION['carrito'][$id_producto]++;
@@ -20,8 +27,7 @@ function agregarAlCarrito($id_producto) {
         $_SESSION['carrito'][$id_producto] = 1;
     }
 }
-
-
+//para que te redirija a la misma página en la que estás y no se te salga
 if (isset($_POST['agregar'])) {
     $id_producto = $_POST['id_producto'];
     agregarAlCarrito($id_producto);

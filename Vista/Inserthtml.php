@@ -59,9 +59,29 @@ if (!isset($_SESSION['usuario'])) {
 
 
     <section>
-      <h2>Quiénes Somos</h2>
-      <p>Elegimos un estilo corporativo en verde y negro para transmitir confianza y profesionalismo, valores esenciales de nuestra empresa.</p>
-      <p>Estamos disponibles para realizar cualquier servicio de nuestra página web. Contáctanos.</p>
+        h1> Añadir Productos </h1>
+        <form action="../Controlador/ControlAddProductos.php" method="POST">
+
+            <label for="id"> ID: </label>
+            <input type="number" name="id" id="id" ><br><br>
+
+            <label for="nombre"> Nombre: </label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="descripcion"> Descripcion </label>
+            <textarea id="descripcion" name="descripcion" required></textarea><br><br>
+
+            <label for="precio"> Precio: </label>
+            <input type="number" id="precio" name="precio" required><br><br>
+
+            <label for="Cliente_id"> Cliente_ID: </label>
+            <input type="number" name="Cliente_id" id="Cliente_id" required>
+
+            <input type="hidden" name="accion" value="agregar">
+            <button type="submit">Agregar Producto</button>
+
+        </form>
+
     </section>
   </main>
 

@@ -5,7 +5,7 @@ if (!isset($_SESSION['usuario'])) {
     header("Location:loginhtml.php");
     exit();
 }
-
+//crear variable carrito
 $carrito = $_SESSION['carrito'];
 
 $controlProducto = new ControlProducto();
@@ -54,8 +54,13 @@ $controlProducto = new ControlProducto();
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($carrito as $id_producto => $cantidad) :
-                    $producto = $controlProducto->obtenerProductoPorId($id_producto); // Método que deberás implementar
+                <?php
+                /*
+                 * se crea en la sesion una variable llamada carrito. Que se guarda como [ [id_producto], [cantidad] ]
+                 * controles en menuhtml
+                */
+                foreach ($carrito as $id_producto => $cantidad) :
+                    $producto = $controlProducto->obtenerProductoCarritoPorId($id_producto);
                     ?>
                     <tr>
                         <td><?php echo $id_producto; ?></td>

@@ -56,10 +56,10 @@ main section {
   margin-left: 50px
 }
 
-
 aside {
   flex: 2;
   padding: 10px;
+  color: black;
 }
 
 footer {

@@ -20,8 +20,8 @@ require_once '../controlador/ControlProducto.php';
 <body>
 <h2>Iniciar sesión</h2>
 <form action="../Controlador/ControlCliente.php" method="POST">
-    <p><label>Usuario: <input type="text" name="usuario" required></label></p>
-    <p><label>Contraseña: <input type="password" name="contraseña" required></label></p>
+    <p><label>Usuario: <input type="text" name="usuario"></label></p>
+    <p><label>Contraseña: <input type="password" name="contraseña"></label></p>
     <p><input type="submit" value="Ingresar"></p>
     <button type="button" onclick="window.location.href='Registro.php'">Registrarse</button>
 

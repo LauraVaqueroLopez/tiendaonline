@@ -16,8 +16,8 @@ class ProductoDao
         $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $productos = [];
-        foreach ($resultados as $fila) {
-            $producto = new DTOProducto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio']);
+        foreach ($resultados as $datosProducto) {
+            $producto = new DTOProducto($datosProducto['id'], $datosProducto['nombre'], $datosProducto['descripcion'], $datosProducto['precio']);
             $productos[] = $producto;
         }
         return $productos;
@@ -27,10 +27,10 @@ class ProductoDao
         $stmt = $this->conn->prepare("SELECT * FROM Producto WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
-        $fila = $stmt->fetch(PDO::FETCH_ASSOC);
+        $datosProducto = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($fila) {
-            return new DTOProducto($fila['id'], $fila['nombre'], $fila['descripcion'], $fila['precio']);
+        if ($datosProducto) {
+            return new DTOProducto($datosProducto['id'], $datosProducto['nombre'], $datosProducto['descripcion'], $datosProducto['precio']);
         } else {
             return null;  // Si no se encuentra el producto, retorna null
         }
