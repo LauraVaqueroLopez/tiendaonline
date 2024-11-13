@@ -15,7 +15,7 @@ if (!isset($_SESSION['usuario'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiénes Somos - Laura's photography Studio</title>
+  <title>Insert - Tienda My Tech</title>
   <link rel="stylesheet" href="css.css">
 </head>
 <body>
@@ -31,7 +31,7 @@ if (!isset($_SESSION['usuario'])) {
           <li><a href="Inserthtml.php">Inserta productos</a></li>
           <li><a href="Deletehtml.php">Elimina productos</a></li>
           <li><a href="Uploadhtml.php">Actualiza productos</a></li>
-          <li> <a href=""> Usuario: <?php echo $_SESSION["usuario"]?></a></li>
+          <li> <a href=""> Usuario: <?php print $_SESSION["usuario"]?></a></li>
           <li> <a href="../Controlador/ControlCerrarSesion.php">Cerrar sesión</a></li>
           <li>
               <a href="Carritohtml.php">
@@ -59,23 +59,23 @@ if (!isset($_SESSION['usuario'])) {
 
 
     <section>
-        h1> Añadir Productos </h1>
+        <h1> Añadir Productos </h1>
         <form action="../Controlador/ControlAddProductos.php" method="POST">
 
-            <label for="id"> ID: </label>
-            <input type="number" name="id" id="id" ><br><br>
+            <label> ID: </label>
+            <input type="number" name="id" ><br><br>
 
-            <label for="nombre"> Nombre: </label>
-            <input type="text" id="nombre" name="nombre" required><br><br>
+            <label> Nombre: </label>
+            <input type="text" name="nombre"><br><br>
 
-            <label for="descripcion"> Descripcion </label>
-            <textarea id="descripcion" name="descripcion" required></textarea><br><br>
+            <label> Descripcion </label>
+            <input type="text" name="descripcion"><br><br>
 
-            <label for="precio"> Precio: </label>
-            <input type="number" id="precio" name="precio" required><br><br>
+            <label> Precio: </label>
+            <input type="number" name="precio"><br><br>
 
             <label for="Cliente_id"> Cliente_ID: </label>
-            <input type="number" name="Cliente_id" id="Cliente_id" required>
+            <input type="number" name="Cliente_id">
 
             <input type="hidden" name="accion" value="agregar">
             <button type="submit">Agregar Producto</button>

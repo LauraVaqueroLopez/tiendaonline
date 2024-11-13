@@ -1,6 +1,5 @@
 <?php
 
-
 session_start();
 require_once '../controlador/ControlProducto.php';
 
@@ -9,23 +8,6 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
-    require_once '../Controlador/ControlSelectID.php';
-    $controlSelectID = new ControlSelectID();
-    $producto = $controlSelectID->listarPorID();
-
-    if ($producto) {
-        echo "<h3>Producto encontrado:</h3>";
-        echo "<p>ID: " . $producto->getId() . "</p>";
-        echo "<p>Nombre: " . $producto->getNombre() . "</p>";
-        echo "<p>Descripción: " . $producto->getDescripcion() . "</p>";
-        echo "<p>Precio: $" . $producto->getPrecio() . "</p>";
-    } else {
-        echo "<p>Producto no encontrado.</p>";
-    }
-    header("Location: Mostrarhtml.php");
-}
 ?>
 
 
@@ -80,17 +62,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
     <section>
         <h2>Escribe el id del producto</h2>
         <form action="../Controlador/ControlSelectID.php" method="post">
-            <p><label>ID del producto: <input type="number" name=id" required></label></p>
+            <p><label>ID del producto: <input type="number" name="id"></label></p>
             <p><input type="submit" value="Mostrar"></p>
 
             <?php
 
             if (isset($_SESSION['aviso'])) {
-                echo '<span class="aviso">' . htmlspecialchars($_SESSION['aviso']) . '</span>';
+               print '<span class="aviso">' . htmlspecialchars($_SESSION['aviso']) . '</span>';
                 unset($_SESSION['aviso']);
             }
 
+
             ?>
+
+            <?php if (isset($_SESSION['producto'])): ?>
+                <div class="producto-detalle">
+                    <h3>Detalles del Producto</h3>
+                    <p><strong>ID:</strong> <?php print ($_SESSION['producto']['id']); ?>€</p>
+                    <p><strong>Nombre:</strong> <?php print ($_SESSION['producto']['nombre']); ?></p>
+                    <p><strong>Descripción:</strong> <?php print ($_SESSION['producto']['descripcion']); ?></p>
+                    <p><strong>Precio:</strong> <?php print ($_SESSION['producto']['precio']); ?> €</p>
+                </div>
+                <?php unset($_SESSION['producto']); ?>
+            <?php endif; ?>
 
         </form>
 

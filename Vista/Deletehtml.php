@@ -15,7 +15,7 @@ if (!isset($_SESSION['usuario'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicios - Laura's Photography Studio</title>
+  <title>Delete - Tienda My Tech</title>
   <link rel="stylesheet" href="css.css">
 </head>
 <body>
@@ -31,7 +31,7 @@ if (!isset($_SESSION['usuario'])) {
           <li><a href="Inserthtml.php">Inserta productos</a></li>
           <li><a href="Deletehtml.php">Elimina productos</a></li>
           <li><a href="Uploadhtml.php">Actualiza productos</a></li>
-          <li> <a href=""> Usuario: <?php echo $_SESSION["usuario"]?></a></li>
+          <li> <a href=""> Usuario: <?php print $_SESSION["usuario"]?></a></li>
           <li> <a href="../Controlador/ControlCerrarSesion.php">Cerrar sesión</a></li>
           <li>
               <a href="Carritohtml.php">

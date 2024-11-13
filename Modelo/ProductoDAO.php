@@ -2,8 +2,7 @@
 require_once 'db.php';
 require_once 'DTOProducto.php';
 
-class ProductoDao
-{
+class ProductoDao {
     private $conn;
 
     public function __construct(){
@@ -32,7 +31,7 @@ class ProductoDao
         if ($datosProducto) {
             return new DTOProducto($datosProducto['id'], $datosProducto['nombre'], $datosProducto['descripcion'], $datosProducto['precio']);
         } else {
-            return null;  // Si no se encuentra el producto, retorna null
+            return null; 
         }
     }
 

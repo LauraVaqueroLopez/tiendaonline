@@ -9,7 +9,7 @@ class ControlProducto
         return $productoDAO->getAllProductos();
     }
 
-    public function obtenerProductoCarritoPorId($id_producto) {
+    public function obtenerProductoPorId($id_producto) {
         $productoDAO = new ProductoDAO();
         return $productoDAO->carritoProductoPorId($id_producto);
     }

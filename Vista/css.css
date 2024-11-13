@@ -57,7 +57,7 @@ main section {
 }
 
 aside {
-  flex: 2;
+  flex: 1;
   padding: 10px;
   color: black;
 }

@@ -99,14 +99,14 @@ if (isset($_POST['agregar'])) {
             <tbody>
             <?php foreach ($productos as $producto) : ?>
                 <tr>
-                    <td><?php echo $producto->getId(); ?></td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $producto->getNombre(); ?></td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $producto->getDescripcion(); ?></td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $producto->getPrecio(); ?></td>
+                    <td><?php print $producto->getId(); ?></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<?php print $producto->getNombre(); ?></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php print $producto->getDescripcion(); ?></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php print $producto->getPrecio(); ?> €</td>
                     <td>
                         <!-- Botón de añadir al carrito -->
                         <form action="menuhtml.php" method="post">
-                            <input type="hidden" name="id_producto" value="<?php echo $producto->getId(); ?>">
+                            <input type="hidden" name="id_producto" value="<?php print $producto->getId(); ?>">
                             &nbsp;&nbsp;
                             <button type="submit" name="agregar" class="btn">Añadir al carrito</button>
                         </form>

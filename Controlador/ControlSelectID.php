@@ -1,21 +1,30 @@
 <?php
+session_start();
 require_once '../Modelo/ProductoDAO.php';
 
-class ControlSelectID
-{
-    public function listarPorID()
-    {
-        // Comprobación de si 'id' se ha enviado correctamente
-        if (isset($_POST['id']) && is_numeric($_POST['id'])) {
-            $id = $_POST['id'];
-            // Crear una instancia del DAO para obtener el producto
-            $productoDAO = new ProductoDao();
-            $producto = $productoDAO->getProductoById($id);  // Obtener producto por ID
+if (!empty($_POST['id'])) {
+    $id = $_POST['id'];
+    $productoDAO = new ProductoDAO();
+    $producto = $productoDAO->getProductoById($id);
 
-            return $producto;
-        }
-
-        return null;  // Si no se envió un id o es inválido, retorna null
+    if ($producto) {
+        $_SESSION['producto'] = [
+            'id' => $producto->getId(),
+            'nombre' => $producto->getNombre(),
+            'descripcion' => $producto->getDescripcion(),
+            'precio' => $producto->getPrecio()
+        ];
+        unset($_SESSION['aviso']);
+    } else {
+        $_SESSION['aviso'] = 'Producto no encontrado';
+        unset($_SESSION['producto']);
     }
+
+    header("Location: ../Vista/Mostrarhtml.php");
+    exit();
+} else {
+    $_SESSION['aviso'] = 'ID no proporcionado';
+    header("Location: ../Vista/Mostrarhtml.php");
+    exit();
 }
 ?>
