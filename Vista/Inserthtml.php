@@ -58,31 +58,33 @@ if (!isset($_SESSION['usuario'])) {
       </aside>
 
 
-    <section>
-        <h1> Añadir Productos </h1>
-        <form action="../Controlador/ControlAddProductos.php" method="POST">
+      <section>
+          <h1> Añadir Productos </h1>
+          <form action="../Controlador/ControlInsertProducto.php" method="POST">
 
-            <label> ID: </label>
-            <input type="number" name="id" ><br><br>
+              <label> Nombre: </label><br>
+              <input type="text" name="nombre"><br><br>
 
-            <label> Nombre: </label>
-            <input type="text" name="nombre"><br><br>
+              <label> Descripcion </label><br>
+              <input type="text" name="descripcion"><br><br>
 
-            <label> Descripcion </label>
-            <input type="text" name="descripcion"><br><br>
+              <label> Precio: </label><br>
+              <input type="number" name="precio"><br><br>
 
-            <label> Precio: </label>
-            <input type="number" name="precio"><br><br>
+              <input type="hidden" name="accion" value="agregar">
+              <button type="submit">Agregar Producto</button>
 
-            <label for="Cliente_id"> Cliente_ID: </label>
-            <input type="number" name="Cliente_id">
+          </form><br><br>
 
-            <input type="hidden" name="accion" value="agregar">
-            <button type="submit">Agregar Producto</button>
+          <?php
+          if (isset($_SESSION['aviso'])) {
+              echo '<span class="aviso">' . htmlspecialchars($_SESSION['aviso']) . '</span>';
+              unset($_SESSION['aviso']);
+          }
+          ?>
+      </section>
 
-        </form>
 
-    </section>
   </main>
 
   <footer>

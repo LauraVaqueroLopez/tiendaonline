@@ -14,6 +14,7 @@ class ControlRegistro {
             header('Location: ../Vista/Registro.php');
             exit();
         }
+        unset($_SESSION['aviso']);
 
         // Registrar el nuevo cliente con la contraseña tal cual se ingresó
         if ($clienteDAO->addCliente($nombre, $contraseña)) {
@@ -26,7 +27,9 @@ class ControlRegistro {
             exit();
         }
     }
+
 }
+unset($_SESSION['aviso']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
@@ -40,5 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ../Vista/Registro.php');
         exit();
     }
+    unset($_SESSION['aviso']);
 }
 ?>

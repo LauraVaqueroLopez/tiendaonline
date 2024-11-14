@@ -49,13 +49,14 @@ class ProductoDao {
     }
 
     public function addProductos($producto) {
-        $stmt = $this->conn->prepare("INSERT INTO Producto (id, nombre, descripcion, precio) VALUES (:id, :nombre, :descripcion, :precio)");
-        $stmt->bindParam(':id', $producto->getId());
+        $stmt = $this->conn->prepare("INSERT INTO Producto ( nombre, descripcion, precio) VALUES ( :nombre, :descripcion, :precio)");
+        //$stmt->bindParam(':id', $producto->getId());
         $stmt->bindParam(':nombre', $producto->getNombre());
         $stmt->bindParam(':descripcion', $producto->getDescripcion());
         $stmt->bindParam(':precio', $producto->getPrecio());
         return $stmt->execute();
     }
+
 
     public function updateProducto($producto) {
         $stmt = $this->conn->prepare("UPDATE Producto SET nombre = :nombre, descripcion = :descripcion, precio = :precio WHERE id = :id");
