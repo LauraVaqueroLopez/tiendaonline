@@ -60,7 +60,7 @@ if (!isset($_SESSION['usuario'])) {
 
     <section>
         <h1> Añadir Productos </h1>
-        <form action="../Controlador/ControlPeticionProductos.php" method="POST">
+        <form action="../Controlador/ControlInsertProductos.php" method="POST">
 
             <label> Nombre: </label><br>
             <input type="text" name="nombre"><br><br>
@@ -75,6 +75,14 @@ if (!isset($_SESSION['usuario'])) {
             <button type="submit">Agregar Producto</button>
 
         </form><br><br>
+
+        <?php
+        if (isset($_SESSION['aviso'])) {
+            echo '<span class="aviso">' . htmlspecialchars($_SESSION['aviso']) . '</span>';
+            unset($_SESSION['aviso']);
+        }
+        ?>
+
     </section>
 </main>
 

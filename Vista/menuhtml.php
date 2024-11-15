@@ -10,17 +10,13 @@ if (!isset($_SESSION['usuario'])) {
 $controlProducto = new ControlProducto();
 $productos = $controlProducto->listarProductos();
 
-// Si $productos está vacío, intenta cargar desde la sesión
 if (empty($productos) && isset($_SESSION['productos'])) {
     $productos = $_SESSION['productos'];
 }
 
-// Crear sesión del carrito
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = [];
 }
-
-// Función para agregar al carrito
 function agregarAlCarrito($id_producto) {
     if (isset($_SESSION['carrito'][$id_producto])) {
         $_SESSION['carrito'][$id_producto]++;

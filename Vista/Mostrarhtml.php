@@ -78,7 +78,7 @@ if (!isset($_SESSION['usuario'])) {
             <?php if (isset($_SESSION['producto'])): ?>
                 <div class="producto-detalle">
                     <h3>Detalles del Producto</h3>
-                    <p><strong>ID:</strong> <?php print ($_SESSION['producto']['id']); ?>€</p>
+                    <p><strong>ID:</strong> <?php print ($_SESSION['producto']['id']); ?></p>
                     <p><strong>Nombre:</strong> <?php print ($_SESSION['producto']['nombre']); ?></p>
                     <p><strong>Descripción:</strong> <?php print ($_SESSION['producto']['descripcion']); ?></p>
                     <p><strong>Precio:</strong> <?php print ($_SESSION['producto']['precio']); ?> €</p>

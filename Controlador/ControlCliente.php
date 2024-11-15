@@ -20,7 +20,7 @@ class ControlCliente {
     }
 }
 
-// Verificamos si el formulario se envió
+// Verificamos si el formulario se ha enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usuario = trim($_POST['usuario']);
     $contraseña = trim($_POST['contraseña']);

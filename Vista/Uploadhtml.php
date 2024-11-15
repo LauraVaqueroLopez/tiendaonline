@@ -62,13 +62,24 @@ if (!isset($_SESSION['usuario'])) {
           <h1> Actualizar Productos </h1>
           <form action="../Controlador/ControlActualizarProductos.php" method="POST">
 
-              <p><label>ID del producto: <input type="number" name="id" ></label></p>
-              <p><label>Nombre del producto: <input type="text" name="nombre" ></label></p>
-              <p><label>Descripción: <input type="text" name="descripcion" ></label></p>
-              <p><label>Precio: <input type="number" step="0.01" name="precio" ></label></p>
+              <p><label>ID del producto: <br>
+                      <input type="number" name="id" ></label></p>
+              <p><label>Nombre del producto: <br>
+                      <input type="text" name="nombre" ></label></p>
+              <p><label>Descripción: <br>
+                      <input type="text" name="descripcion" ></label></p>
+              <p><label>Precio: <br>
+                      <input type="number" step="0.01" name="precio" ></label></p>
               <p><input type="submit" value="Actualizar Producto"></p>
 
           </form><br><br>
+
+          <?php
+          if (isset($_SESSION['aviso'])) {
+              echo '<span class="aviso">' . htmlspecialchars($_SESSION['aviso']) . '</span>';
+              unset($_SESSION['aviso']);
+          }
+          ?>
       </section>
 
   </main>

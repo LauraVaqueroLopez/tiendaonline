@@ -60,11 +60,18 @@ if (!isset($_SESSION['usuario'])) {
 
     <section>
         <h2>Escribe el id del producto</h2>
-        <form action="../Controlador/ControlPeticionDelete.php" method="post">
+        <form action="../Controlador/ControlDeleteProductos.php" method="post">
             <label>ID del producto:</label><br>
             <input type="number" name="id"><br><br>
             <input type="submit" value="Eliminar Producto">
-        </form>
+        </form><br>
+
+        <?php
+        if (isset($_SESSION['aviso'])) {
+            echo '<span class="aviso">' . htmlspecialchars($_SESSION['aviso']) . '</span>';
+            unset($_SESSION['aviso']);
+        }
+        ?>
 
     </section>
 
