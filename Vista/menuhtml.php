@@ -14,6 +14,7 @@ if (empty($productos) && isset($_SESSION['productos'])) {
     $productos = $_SESSION['productos'];
 }
 
+
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = [];
 }
