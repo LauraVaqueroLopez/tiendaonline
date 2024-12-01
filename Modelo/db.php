@@ -1,9 +1,9 @@
 <?php
 class DB {
-    private static $host = 'localhost:3307';
+    private static $host = 'localhost:3306';
     private static $dbName = 'mi_tienda';
-    private static $username = 'root';
-    private static $password = 'laura';
+    private static $username = 'laura';
+    private static $password = '123';
     private static $conn = null;
 
     public static function getConnection() {
