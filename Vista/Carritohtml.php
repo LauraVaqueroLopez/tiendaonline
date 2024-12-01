@@ -6,7 +6,6 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 //crear variable carrito
-
 $carrito = $_SESSION['carrito'];
 
 $controlProducto = new ControlProducto();
